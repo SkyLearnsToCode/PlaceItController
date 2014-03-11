@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    class="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout 
+    android:id="@+id/myBack"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+ 
+           <EditText
+        android:id="@+id/location"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Type a location or an address"
+        android:inputType="text" >
+        
+
+        <requestFocus />
+    </EditText>
+           <Button
+            android:id="@+id/find"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/location"
+            android:text="Search" />
+           
+            <Button
+            android:id="@+id/add"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/find"
+            android:text="+" />
+    </RelativeLayout>
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="20"
+        class="com.google.android.gms.maps.SupportMapFragment" />
+    
+
+</LinearLayout>
+ <ListView
+            android:id="@+id/left_drawer"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:choiceMode="singleChoice"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dp"
+            android:background="#111"/>
+
+        <ListView
+            android:id="@+id/right_drawer"
+            android:layout_width="280dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="#111"
+            android:choiceMode="singleChoice"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dp" />
+        
+          <RelativeLayout
+android:id="@+id/mainLyt"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent">
+<!-- Some layout things -->
+
+<ScrollView
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:layout_above="@+id/bottomBar">
+
+<!-- some scrolling content -->
+
+ 
+</ScrollView>
+
+<LinearLayout
+android:id="@+id/bottomBar"
+android:layout_height="wrap_content"
+android:layout_width="fill_parent"
+android:orientation="horizontal"
+android:layout_alignParentBottom="true">
+
+<Button
+     android:id="@+id/logout"
+     android:layout_height="wrap_content"
+     android:layout_width="wrap_content"
+     android:text="Log out"
+     />
+</LinearLayout>
+
+</RelativeLayout>
+</android.support.v4.widget.DrawerLayout>
